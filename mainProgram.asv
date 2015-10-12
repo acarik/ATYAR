@@ -1,0 +1,18 @@
+load('yarislarInd.mat');
+global lut
+%% yaris programi oku ve lut yapisini da kullanarak indeksleri don
+% yarislarInd gibi bir yapida idafe et
+yarisProgramiInd = YarisProgamiVerisiCek(3,5,4,2015);
+
+    'Adana';
+    '%c4%b0zmir';
+    '%c4%b0stanbul';
+    'Bursa';
+    'Ankara';};
+% http://www.tjk.org/TR/yarissever/Info/GetCSV/GunlukYarisProgrami?SehirId=2&QueryParameter_Tarih=29/03/2015&Sehir=%c4%b0zmir
+save('yarisProgramiInd.mat','yarisProgramiInd','lut');
+
+%% neuralDataProg olustur
+cd neural
+neuralYarisProgram
+cd ..

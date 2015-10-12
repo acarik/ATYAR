@@ -1,0 +1,6 @@
+internet_veri_cek 49. satýr yukarýya alýnmalý
+yarislar(1,x).bilgiler satýrýnda tarih ters yazýlmýþ (ay ve gün yer deðiþtirmeli)
+20080402-3.csv dosyasýnda 25.satirda 1.çifte ibaresi hataya neden oluyor elle silindi
+108.dosyada da da ayný hata mevcut
+YarisProgramiCek matlab 56 ve 58 satýrlarý yazýldý
+TJK sitesinden indirilen yarýþ bilgisi UTF-8 kodlamasýnda, ama MATLAB içinden okuyunca ANSI kodlamasýna göre yazýlýyor. Ýki kodlamaya da uygun bir çözüm yapýlacak.

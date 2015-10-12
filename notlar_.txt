@@ -1,0 +1,17 @@
+amele gibi bissürü text dosyasý olmasýn
+internete baðlý deðilse 0bayt olarak eklemesin
+
+arayüz girdileri, her bir koþu için
+query:
+mesafe aralýk
+tarih aralýk
+þehir (or)
+pist
+koþu cinsi
+koþu grubu
+
+döküm:
+her koþu için,
+ilk iki at için, 
+	ganyan sýralamasý
+	at sayýsý

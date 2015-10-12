@@ -27,7 +27,8 @@ sorgu{end+1} = sorguElemaniOlustur('Grup>GrupCins',[],[]);
 %     sorguElemaniOlustur('Agirlik1',false,{}),...
 %     sorguElemaniOlustur('Agirlik2',false,{}),...
 %     });
-% sorgu{end+1} = sorguElemaniOlustur('Mesafe',false,{});
+% sorgu{end+1} = sorguElemaniOlustur('Mesafe',{1599 1601},'aralik');
+% sorgu{end+1} = sorguElemaniOlustur('Mesafe',1600,[]);
 % sorgu{end+1} = sorguElemaniOlustur('Pist',true,{});
 % 
 % % at

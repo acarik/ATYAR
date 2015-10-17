@@ -1,8 +1,8 @@
 addpath('sifirBayt');
 
 TJK_DAN_YARIS_OKU = true;
-YARISLAR_GUNCELLE = false;
-LUT_BASTAN_INDEKSLE = false; % true=>bastan indeksler
+YARISLAR_GUNCELLE = true;
+LUT_BASTAN_INDEKSLE = true; % true=>bastan indeksler
 NEURAL_DATA_GUNCELLE = false;
 
 %% internetten veri cekme

@@ -41,7 +41,8 @@ while true
     for sehirId = 1:5
         url = sprintf('http://www.tjk.org/TR/YarisSever/Info/GetCSV/GunlukYarisSonuclari?SehirId=%d&QueryParameter_Tarih=%02g/%02g/%d&Sehir=%s',...
             sehirId,day,month,year,sehirStr{sehirId});
-        fname = [int2str(year), num2str(month,'%02g'), num2str(day,'%02g'), '-' int2str(sehirId) '.csv'];
+%         fname = [int2str(year), num2str(month,'%02g'), num2str(day,'%02g'), '-' int2str(sehirId) '.csv'];
+        fname = sprintf('%d%02g%02g-%d.csv',year,month,day,sehirId);
         if exist(['sonuclar\' fname],'file')% || exist(['sonuclar\0bayt\' fname],'file')
             disp(['sonuclar\' fname, ' dosyasi zaten var, atlaniyor']);
             % oyleyse bunu okuma

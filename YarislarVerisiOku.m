@@ -18,7 +18,7 @@ for f = 1:length(files)
     satirNo = 0;
     clear yaris
     yaris.kosular = {};
-    while ~isequal(tline,-1)
+    while ~isequal(tline,-1) && ~isempty(tline)
         tline = fgetl(fid);
         satirNo = satirNo + 1;
         
@@ -44,7 +44,7 @@ for f = 1:length(files)
             end
             % kacinci kosu oldugunu cekmek
             ind = find(kosu.bilgiler{1}=='.',1,'first');
-            currKosuNo = str2double(kosu.bilgiler{1}(1:ind-1));
+            currKosuNo = str2doublebasit(kosu.bilgiler{1}(1:ind-1));
             if (currKosuNo == 0)
                 %0.koþu ise atla
                 %                 currKosuNo = 13;
@@ -81,7 +81,8 @@ for f = 1:length(files)
                         ~isempty(strfind(tline,'7. ÇÝFTE')) || ...
                         ~isempty(strfind(tline,'1.ALTILI GANYAN')) || ...
                         ~isempty(strfind(tline,'2.ALTILI GANYAN')) || ...
-                        ~isempty(strfind(tline,'6''LI GANYAN'))
+                        ~isempty(strfind(tline,'6''LI GANYAN')) || ...
+                        ~isempty(strfind(tline,'1. 3''LÜ GANYAN'))
                     %1. ÇÝFTE, 2. ÇÝFTE ve 3. ÇÝFTE numara ile yazdýðý için
                     break
                 end
@@ -109,7 +110,7 @@ for f = 1:length(files)
                     at{i} = tline(ind(i)+1:ind(i+1)-1);
                 end
                 % at numarasi, ilk field icine yazili
-                atNo = str2double(at{1});
+                atNo = str2doublebasit(at{1});
                 yaris.kosular{currKosuNo}.atlar(atNo,:) = at;
                 
             end
@@ -124,8 +125,7 @@ end
 for y = 1:length(yarislar)
     for k = 1:length(yarislar(y).kosular)
         if ~isfield(yarislar(y).kosular{k},'atlar')
-            disp('sorunlu yaris:')
-            disp([y k])
+            warning(['sorunlu yaris:' num2str(y) ' ' num2str(k)])
         end
     end
 end

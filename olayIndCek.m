@@ -56,17 +56,13 @@ if isempty(currLutEleman.altElemanlar)
         n = length(currLutEleman.deger);
         % aranan indeksi n+1 olarak baslat, ki for loop'un sonunda bu degerde
         % kalirsa lut genisletilsin
-        lutInd = n + 1;
-        for i = 1:n
-            if currLutEleman.deger{i}(1) == currAlanBilgi(1) % kodu hizlandirmak icin eklendi
-                if isequal(currLutEleman.deger{i},currAlanBilgi)
-                    lutInd = i;
-                    break
-                end
-            end
-        end
-        % eger bulunmamissa, yani
-        if lutInd == n + 1
+        t = strcmp(currLutEleman.deger,currAlanBilgi);
+        if any(t)
+            % demek ki eslesme var
+            lutInd = find(t);
+        else
+            % demek ki yeni eklenecek.
+            lutInd = n + 1;
             %             currLutEleman.indeks(lutInd) = lutInd;
             warning('lut''a yeni eleman ekleniyor: "%s" isimli "%s"',currAlanBilgi,currLutEleman.alanAdi);
             currLutEleman.deger{lutInd} = currAlanBilgi;
@@ -281,7 +277,7 @@ switch currAlanIsim
         
     case 'Yaþ'
         currUstAlanIsimIcinBilgi = strsplit(currUstAlanIsimIcinBilgi,' ');
-        currUstAlanIsimIcinBilgi{1} = str2double(currUstAlanIsimIcinBilgi{1}(1:end-1));
+        currUstAlanIsimIcinBilgi{1} = str2doublebasit(currUstAlanIsimIcinBilgi{1}(1:end-1));
         
     case {'Orijin(Baba)', 'Orijin(Anne)'};
         s = currUstAlanIsimIcinBilgi;

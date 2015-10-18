@@ -18,8 +18,6 @@ end
 %% yarislar yapisini LUT'a gecir
 if LUT_BASTAN_INDEKSLE
     YarislarIndeksle();
-else
-    % burasi yazilacak.
 end
 
 %% NEURAL_DATA_GUNCELLE

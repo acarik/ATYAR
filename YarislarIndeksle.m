@@ -68,7 +68,7 @@ for y = 1:length(yarislar)
                     ind = olayIndCek(bilgi,alanIsim);
                     %                 yarislarInd(i,1:length(ind)) = ind;
                     yarislarInd(i,:) = ind;
-                    disp(['yaris#', num2str(y), ' kosu#', num2str(k), ' at#' num2str(a) ' indekslendi'])
+                    disp(['yaris#', num2str(y), '/', num2str(length(yarislar)) ' kosu#', num2str(k), ' at#' num2str(a) ' indekslendi'])
                     %             catch
                     %                 i = i - 1;
                     %                 % neden bu bloka dustugunun aciklamasi eklenecek

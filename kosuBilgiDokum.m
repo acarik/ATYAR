@@ -10,7 +10,7 @@ dokumAlanlar = {
     'Jokey Adý'
     'Derece'
     'Ganyan'
-    'Fark'
+    '_Fark'
     'HK'
     '_Ganyan Sýralamasý'
     '_Jokey Þehir Kazanma Oraný'
@@ -25,24 +25,29 @@ for j = 1:length(indL)
             r = [];
         else
             [ind, ustInd, altInd] = getLutInd(alanAdi);
-            % sutunInd = yarislarIndSutunIndeksBul(ind,altInd);
-            deger = {yarislarInd(indL(j),ind)};
-            if isempty(find(alanAdi=='>'))
-                sorguDegeri = struct('alanAdi',alanAdi,'deger',deger,'karsilastirmaTipi',[]);
+            currDeger = yarislarInd(indL(j),ind);
+            if isempty(altInd)
+                if lut{ustInd}.lutFlag
+                    r = lut{ustInd}.deger{currDeger};
+                else
+                    r = currDeger;
+                end
             else
-                sorguDegeri = struct('alanAdi',alanAdi(find(alanAdi=='>')+1:end),'deger',deger,'karsilastirmaTipi',[]);
+                if lut{ustInd}.altElemanlar{altInd}.lutFlag
+                    r = lut{ustInd}.altElemanlar{altInd}.deger{currDeger};
+                else
+                    r = currDeger;
+                end
             end
-            if ~iscell(sorguDegeri.deger)
-                tmp = sorguDegeri.deger;
-                sorguDegeri.deger = cell(1,1);
-                sorguDegeri.deger{1} = tmp;
-            end
-            r = gercekDegeriBul(sorguDegeri,ustInd,altInd);
+            1;
             if strcmp(alanAdi,'Tarih')
                 r = datestr(r);
+            elseif strcmp(alanAdi,'Yaþ>Cinsiyet')
+                r = char(r);
             end
         end
         A{j,i} = r;
     end
 end
-A = [dokumAlanlar(:)', A];
+A = [dokumAlanlar(:)'; A];
+xlswrite('dokum.xls',A);

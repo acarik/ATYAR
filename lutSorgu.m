@@ -1,6 +1,5 @@
 function ind = lutSorgu(indx,degerlerOr)
 global lut yarislarInd
-1==2;
 yarislarIndSutNo = indx(1);
 ustInd = indx(2);
 altInd = indx(3);

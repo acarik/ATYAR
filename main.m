@@ -20,6 +20,10 @@ if LUT_BASTAN_INDEKSLE
     YarislarIndeksle();
 end
 
+%% sorgu
+% sorgulanan degerler fonksiyonun icine yazili.
+SorguScript();
+
 %% NEURAL_DATA_GUNCELLE
 if NEURAL_DATA_GUNCELLE
     cd neural

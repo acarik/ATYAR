@@ -5,9 +5,9 @@ formatIn = 'yy/mm/dd';
 sorgu = {};
 
 % yaris
-sorgu{end+1} = sorguElemaniOlustur('Sehir',{'Ýzmir','Ankara'},'or');
-sorgu{end+1} = sorguElemaniOlustur('YarisGunNo',[],[]);
-sorgu{end+1} = sorguElemaniOlustur('Tarih',{datenum('2006/01/01',formatIn), datenum('2007/01/01',formatIn)},'aralik');
+% sorgu{end+1} = sorguElemaniOlustur('Sehir',{'Ýzmir','Ankara'},'or');
+% sorgu{end+1} = sorguElemaniOlustur('YarisGunNo',[],[]);
+% sorgu{end+1} = sorguElemaniOlustur('Tarih',{datenum('2006/01/01',formatIn), datenum('2007/01/01',formatIn)},'aralik');
 
 % kosu
 % sorgu{end+1} = sorguElemaniOlustur('KosuNo',true,{... 
@@ -15,13 +15,13 @@ sorgu{end+1} = sorguElemaniOlustur('Tarih',{datenum('2006/01/01',formatIn), date
 %     sorguElemaniOlustur('Saat',false,{}),...
 %     });
 % sorgu{end+1} = sorguElemaniOlustur('KosuNo>KosuNo',{1, 2, 3,},'or');
-sorgu{end+1} = sorguElemaniOlustur('KosuCinsi>Diþi',1,'and');
-sorgu{end+1} = sorguElemaniOlustur('KosuCinsi>Y1',1,'and');
-sorgu{end+1} = sorguElemaniOlustur('KosuCinsi>Y2',[],[]);
-sorgu{end+1} = sorguElemaniOlustur('KosuCinsi>Y3',[],[]);
+% sorgu{end+1} = sorguElemaniOlustur('KosuCinsi>Diþi',1,'and');
+% sorgu{end+1} = sorguElemaniOlustur('KosuCinsi>Y1',1,'and');
+% sorgu{end+1} = sorguElemaniOlustur('KosuCinsi>Y2',[],[]);
+% sorgu{end+1} = sorguElemaniOlustur('KosuCinsi>Y3',[],[]);
 
-sorgu{end+1} = sorguElemaniOlustur('Grup>GrupYas',[],[]);
-sorgu{end+1} = sorguElemaniOlustur('Grup>GrupCins',[],[]);
+% sorgu{end+1} = sorguElemaniOlustur('Grup>GrupYas',[],[]);
+% sorgu{end+1} = sorguElemaniOlustur('Grup>GrupCins',[],[]);
 
 % sorgu{end+1} = sorguElemaniOlustur('Agirlik',false,{
 %     sorguElemaniOlustur('Agirlik1',false,{}),...
@@ -67,4 +67,20 @@ sorgu{end+1} = sorguElemaniOlustur('Grup>GrupCins',[],[]);
 % sorgu{end+1} = sorguElemaniOlustur('Ganyan',false,{});
 % sorgu{end+1} = sorguElemaniOlustur('Fark',false,{});
 
-ind = olayIndSorgula(sorgu);
+sorgu{end+1} = sorguElemaniOlustur('Mesafe',{1199 1201},'aralik');
+sorgu{end+1} = sorguElemaniOlustur('Tarih',{datenum('2013/09/01',formatIn), datenum('2014/09/01',formatIn)},'aralik');
+sorgu{end+1} = sorguElemaniOlustur('Sehir',{'Ankara'},[]);
+sorgu{end+1} = sorguElemaniOlustur('Pist',{'Çim'},[]);
+sorgu{end+1} = sorguElemaniOlustur('KosuCinsi>KosuCinsi',{'Maiden'},[]);
+% sorgu{end+1} = sorguElemaniOlustur('Grup>GrupYas',{'5 ve Yukarý'},[]);
+sorgu{end+1} = sorguElemaniOlustur('Grup>GrupCins',{'Araplar'},[]);
+
+indL = olayIndSorgula(sorgu);
+
+% simdi bulunanlari dok
+sorguSonucInd = find(indL);
+% for i = 1:length(sorguSonucInd)
+    kosuBilgiDokum(sorguSonucInd);
+    
+% end
+

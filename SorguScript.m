@@ -67,13 +67,14 @@ sorgu = {};
 % sorgu{end+1} = sorguElemaniOlustur('Ganyan',false,{});
 % sorgu{end+1} = sorguElemaniOlustur('Fark',false,{});
 
-sorgu{end+1} = sorguElemaniOlustur('Mesafe',{1199 1201},'aralik');
-sorgu{end+1} = sorguElemaniOlustur('Tarih',{datenum('2013/09/01',formatIn), datenum('2014/09/01',formatIn)},'aralik');
+sorgu{end+1} = sorguElemaniOlustur('Mesafe',{889 901},'aralik');
+sorgu{end+1} = sorguElemaniOlustur('Tarih',{datenum('2014/04/01',formatIn), datenum('2014/09/01',formatIn)},'aralik');
 sorgu{end+1} = sorguElemaniOlustur('Sehir',{'Ankara'},[]);
 sorgu{end+1} = sorguElemaniOlustur('Pist',{'Çim'},[]);
 sorgu{end+1} = sorguElemaniOlustur('KosuCinsi>KosuCinsi',{'Maiden'},[]);
 % sorgu{end+1} = sorguElemaniOlustur('Grup>GrupYas',{'5 ve Yukarý'},[]);
 sorgu{end+1} = sorguElemaniOlustur('Grup>GrupCins',{'Araplar'},[]);
+sorgu{end+1} = sorguElemaniOlustur('At No',{1 3},'aralik');
 
 indL = olayIndSorgula(sorgu);
 

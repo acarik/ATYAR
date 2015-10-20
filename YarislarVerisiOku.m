@@ -4,7 +4,7 @@ if isempty(files)
 end
 clear yarislar
 for f = 1:length(files)
-    disp(files(f).name);
+    disp([num2str(f) '\' num2str(length(files)) ':'  files(f).name]);
     % eger son dosya aciksa kapat
     try
         fclose(fid);
@@ -18,7 +18,7 @@ for f = 1:length(files)
     satirNo = 0;
     clear yaris
     yaris.kosular = {};
-    while ~isequal(tline,-1) && ~isempty(tline)
+    while ~isequal(tline,-1)% && ~isempty(tline)
         tline = fgetl(fid);
         satirNo = satirNo + 1;
         

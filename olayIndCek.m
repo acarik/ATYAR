@@ -64,7 +64,7 @@ if isempty(currLutEleman.altElemanlar)
             % demek ki yeni eklenecek.
             lutInd = n + 1;
             %             currLutEleman.indeks(lutInd) = lutInd;
-            warning('lut''a yeni eleman ekleniyor: "%s" isimli "%s"',currAlanBilgi,currLutEleman.alanAdi);
+            fprintf('lut''a yeni eleman ekleniyor: "%s" isimli "%s"\n',currAlanBilgi,currLutEleman.alanAdi);
             currLutEleman.deger{lutInd} = currAlanBilgi;
         end
     else

@@ -1,7 +1,7 @@
 addpath('sifirBayt');
 
-TJK_DAN_YARIS_OKU = true;
-YARISLAR_GUNCELLE = true;
+TJK_DAN_YARIS_OKU = false;
+YARISLAR_GUNCELLE = false;
 LUT_BASTAN_INDEKSLE = true; % true=>bastan indeksler
 NEURAL_DATA_GUNCELLE = false;
 
